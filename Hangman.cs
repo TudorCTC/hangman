@@ -37,7 +37,7 @@ namespace HangmanGame {
             Console.Write('\n');
         }
 
-        public static void Main(string[] args) {
+        public static void play() {
             // read the list of words
             StreamReader reader = new StreamReader("words.txt");
             string content = reader.ReadToEnd();
@@ -91,6 +91,16 @@ namespace HangmanGame {
                 printLetters(letters);
                 Console.WriteLine("You won!");
             }
+        }
+
+        public static void Main(string[] args) {
+            string answer = "YES";
+            while (answer == "YES") {
+                play();
+                Console.WriteLine("Do you want to play again? YES/NO");
+                answer = Console.ReadLine();
+            }
+            Console.WriteLine("Thanks for playing!");
         }
     }
 }
