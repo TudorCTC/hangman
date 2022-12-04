@@ -99,11 +99,11 @@ namespace HangmanGame {
         }
 
         public static void Main(string[] args) {
-            string answer = "YES";
-            while (answer == "YES") {
+            string answer = "Y";
+            while (answer == "Y") {
                 play();
-                Console.WriteLine("Do you want to play again? YES/NO");
-                answer = Console.ReadLine();
+                Console.WriteLine("Do you want to play again? Y/N");
+                answer = Console.ReadLine().ToUpper();
             }
             Console.WriteLine("Thanks for playing!");
         }
