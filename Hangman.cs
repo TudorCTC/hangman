@@ -6,13 +6,13 @@ using System.IO;
 namespace HangmanGame {
     public class Hangman{
         private static ArrayList STAGES = new ArrayList() {
-            "  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========\n",
-            "  +---+\n  |   |\n  O   |\n      |\n      |\n      |\n=========\n",
-            "  +---+\n  |   |\n  O   |\n  |   |\n      |\n      |\n=========\n",
-            "  +---+\n  |   |\n  O   |\n /|   |\n      |\n      |\n=========\n",
-            "  +---+\n  |   |\n  O   |\n /|\\  |\n      |\n      |\n=========\n",
-            "  +---+\n  |   |\n  O   |\n /|\\  |\n /    |\n      |\n=========\n",
-            "  +---+\n  |   |\n  O   |\n /|\\  |\n / \\  |\n      |\n=========\n"
+            "  +---+\r\n  |   |\r\n      |\r\n      |\r\n      |\r\n      |\r\n=========\r\n",
+            "  +---+\r\n  |   |\r\n  O   |\r\n      |\r\n      |\r\n      |\r\n=========\r\n",
+            "  +---+\r\n  |   |\r\n  O   |\r\n  |   |\r\n      |\r\n      |\r\n=========\r\n",
+            "  +---+\r\n  |   |\r\n  O   |\r\n /|   |\r\n      |\r\n      |\r\n=========\r\n",
+            "  +---+\r\n  |   |\r\n  O   |\r\n /|\\  |\r\n      |\r\n      |\r\n=========\r\n",
+            "  +---+\r\n  |   |\r\n  O   |\r\n /|\\  |\r\n /    |\r\n      |\r\n=========\r\n",
+            "  +---+\r\n  |   |\r\n  O   |\r\n /|\\  |\r\n / \\  |\r\n      |\r\n=========\r\n"
 
         };
         private const int LIVES = 6;
@@ -34,7 +34,7 @@ namespace HangmanGame {
                 Console.Write(letters[i]);
                 Console.Write(' ');
             }
-            Console.Write('\n');
+            Console.Write("\r\n");
         }
 
         public static void play(string[] words) {
