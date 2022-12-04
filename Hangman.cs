@@ -55,7 +55,8 @@ namespace HangmanGame {
                 letters[i] = '_';
             }
             toGuess -= replace(letters, word, word[0]);
-            toGuess -= replace(letters, word, word[word.Length - 1]);
+            if (word[0] != word[word.Length - 1])
+                toGuess -= replace(letters, word, word[word.Length - 1]);
 
             // the set of characters in the word
             HashSet<char> chars = new HashSet<char>();
