@@ -48,26 +48,30 @@ namespace HangmanGame {
             string word = words[random.Next(0, words.Length)];
             word = word.Trim('"').ToUpper();
 
+            // the set of characters in the word
+            HashSet<char> chars = new HashSet<char>();
+            for (int i = 0; i < word.Length; i++) {
+                chars.Add(Char.ToUpper(word[i]));
+            }
+            HashSet<char> guesses = new HashSet<char>();
+
             // create a representation of the word
             int toGuess = word.Length;
             char[] letters = new char[word.Length];
             for (int i = 0; i < word.Length; i++) {
                 letters[i] = '_';
             }
-            toGuess -= replace(letters, word, word[0]);
-            if (word[0] != word[word.Length - 1])
-                toGuess -= replace(letters, word, word[word.Length - 1]);
 
-            // the set of characters in the word
-            HashSet<char> chars = new HashSet<char>();
-            for (int i = 0; i < word.Length; i++) {
-                chars.Add(Char.ToUpper(word[i]));
+            // "guess" the first and last letters
+            toGuess -= replace(letters, word, word[0]);
+            guesses.Add(word[0]);
+            if (word[0] != word[word.Length - 1]) {
+                toGuess -= replace(letters, word, word[word.Length - 1]);
+                guesses.Add(word[word.Length - 1]);
             }
 
             // game loop
             int mistakes = 0;
-            HashSet<char> guesses = new HashSet<char>();
-
             while (mistakes < LIVES && toGuess != 0) {
                 // print the stage
                 Console.WriteLine(STAGES[mistakes]);
