@@ -1,6 +1,6 @@
 # Hangman
 
-This is a simple implementation of the game Hangman that runs. I used this project as an opportunity to learn more about C#. 
+This is a simple implementation of the game Hangman. I used this project as an opportunity to learn more about C#. 
 
 The game can be run by opening a terminal and running:
 ```
